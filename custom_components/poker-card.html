@@ -1,4 +1,5 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="mixin.html">
 
 <polymer-element name="poker-card" attributes="kind number value">
 
@@ -8,22 +9,17 @@
   </template>
 
   <script>
-    Polymer({
-    	typescollection : ["clubs","hearts","spades","diamonds"],
+    Polymer(Polymer.mixin({
 
     	created: function(){
     		
     	},
 
     	ready: function(){
-    		console.log("THIS KIND");
-    		console.log(this.kind);
-    		console.log("THIS NUMBER");
-    		console.log(this.number);
     		this.posy = this.typescollection.indexOf(this.kind);
     		
     	}
-    });
+    }, PokerGame));
   </script>
 
 </polymer-element>

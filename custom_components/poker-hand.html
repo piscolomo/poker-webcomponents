@@ -1,29 +1,29 @@
-<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/polymer/polymer.html" >
+<link rel="import" href="mixin.html">
 
 <polymer-element name="poker-hand">
 
   <template>
     <div id="hand">
-      <poker-card kind="{{getKind()}}" number="{{getNumber()}}"></poker-card>
-      <poker-card kind="{{getKind()}}" number="{{getNumber()}}"></poker-card>
+      <poker-card kind="{{getCard().kind}}" number="{{getCard().number}}"></poker-card>
+      <poker-card kind="{{getCard().kind}}" number="{{getCard().number}}"></poker-card>
     </div>
   </template>
 
   <script>
-    Polymer({
+    Polymer(Polymer.mixin({
 
     	ready: function(){
 
     	},
 
-      getKind: function(){
-        return "hearts";
-      },
-      
-      getNumber: function(){
-        return "2";
+      getCard: function(){
+        var kindrandom = this.typescollection[Math.floor(Math.random()*this.typescollection.length)];
+        var nrandom = Math.floor((Math.random() * 13) + 1);
+
+        return {kind: kindrandom, number: nrandom};
       }
-    });
+    }, PokerGame));
   </script>
 
 </polymer-element>

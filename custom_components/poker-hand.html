@@ -1,11 +1,12 @@
 <link rel="import" href="../bower_components/polymer/polymer.html" >
 <link rel="import" href="mixin.html">
 
-<polymer-element name="poker-hand">
+<polymer-element name="poker-hand" attributes="me">
 
   <template>
+    <link rel="stylesheet" href="poker-card.css">
     <div id="hand">
-      <poker-card kind="{{getCard().kind}}" number="{{getCard().number}}"></poker-card>
+      <poker-card hold kind="{{getCard().kind}}" number="{{getCard().number}}"></poker-card>
       <poker-card kind="{{getCard().kind}}" number="{{getCard().number}}"></poker-card>
     </div>
   </template>

@@ -3,3 +3,8 @@
 	width: 73px;
 	height: 97px;
 }
+
+.hold{
+	background: url("images/hold.jpg") !important;
+	background-size: 73px !important;
+}

@@ -2,6 +2,8 @@
 	background: url(images/poker.png) no-repeat;
 	width: 73px;
 	height: 97px;
+	display: inline-block;
+	margin: 20px 0;
 }
 
 .hold{

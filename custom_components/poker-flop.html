@@ -1,25 +1,18 @@
 <link rel="import" href="../bower_components/polymer/polymer.html" >
 <link rel="import" href="mixin.html">
 
-<polymer-element name="poker-hand" attributes="me">
+<polymer-element name="poker-flop">
 
   <template>
     <div id="hand">
-      <poker-card hold?={{isHolding}} kind="{{getCard().kind}}" number="{{getCard().number}}"></poker-card>
-      <poker-card hold?={{isHolding}} kind="{{getCard().kind}}" number="{{getCard().number}}"></poker-card>
+      <poker-card kind="{{getCard().kind}}" number="{{getCard().number}}"></poker-card>
+      <poker-card kind="{{getCard().kind}}" number="{{getCard().number}}"></poker-card>
+      <poker-card kind="{{getCard().kind}}" number="{{getCard().number}}"></poker-card>
     </div>
   </template>
 
   <script>
     Polymer(Polymer.mixin({
-
-      ready: function(){
-        this.isHolding = true;
-      },
-
-      meChanged: function(){
-        this.isHolding = false;
-      },
 
       getCard: function(){
         var kindrandom = this.typescollection[Math.floor(Math.random()*this.typescollection.length)];

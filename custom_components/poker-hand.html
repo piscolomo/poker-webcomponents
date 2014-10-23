@@ -13,8 +13,13 @@
 
   <script>
     Polymer(Polymer.mixin({
+
       ready: function(){
-        this.isHolding = this.me != undefined ? false : true;
+        this.isHolding = true;
+      },
+
+      meChanged: function(){
+        this.isHolding = false;
       },
 
       getCard: function(){

@@ -10,13 +10,9 @@
 
   <script>
     Polymer(Polymer.mixin({
-
-    	created: function(){
-        
-    	},
-
+      
       holdChanged: function(){
-        if (this.hold != undefined) this.$.card.className = "hold";
+        this.$.card.className = "hold";
       },
 
     	ready: function(){    

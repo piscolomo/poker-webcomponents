@@ -1,14 +1,24 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 
-<polymer-element name="poker-card">
+<polymer-element name="poker-card" attributes="kind number">
 
   <template>
     <link rel="stylesheet" href="poker-card.css">
-
+		<div id="card" style="background-position-y: {{posy * -99}}px; background-position-x: {{(number - 1) * -73}}px"></div>
   </template>
 
   <script>
-    Polymer({});
+    Polymer({
+    	typescollection : ["clubs","hearts","spades","diamonds"],
+
+    	created: function(){
+    		
+    	},
+
+    	ready: function(){
+    		this.posy = this.typescollection.indexOf(this.kind);
+    	}
+    });
   </script>
 
 </polymer-element>

@@ -6,17 +6,16 @@
   <template>
     <link rel="stylesheet" href="poker-card.css">
     <div id="hand">
-      <poker-card hold kind="{{getCard().kind}}" number="{{getCard().number}}"></poker-card>
-      <poker-card kind="{{getCard().kind}}" number="{{getCard().number}}"></poker-card>
+      <poker-card hold?={{isHolding}} kind="{{getCard().kind}}" number="{{getCard().number}}"></poker-card>
+      <poker-card hold?={{isHolding}} kind="{{getCard().kind}}" number="{{getCard().number}}"></poker-card>
     </div>
   </template>
 
   <script>
     Polymer(Polymer.mixin({
-
-    	ready: function(){
-
-    	},
+      ready: function(){
+        this.isHolding = this.me != undefined ? false : true;
+      },
 
       getCard: function(){
         var kindrandom = this.typescollection[Math.floor(Math.random()*this.typescollection.length)];
@@ -25,6 +24,7 @@
         return {kind: kindrandom, number: nrandom};
       }
     }, PokerGame));
+    
   </script>
 
 </polymer-element>

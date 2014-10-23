@@ -1,0 +1,29 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<polymer-element name="poker-hand">
+
+  <template>
+    <div id="hand">
+      <poker-card kind="{{getKind()}}" number="{{getNumber()}}"></poker-card>
+      <poker-card kind="{{getKind()}}" number="{{getNumber()}}"></poker-card>
+    </div>
+  </template>
+
+  <script>
+    Polymer({
+
+    	ready: function(){
+
+    	},
+
+      getKind: function(){
+        return "hearts";
+      },
+      
+      getNumber: function(){
+        return "2";
+      }
+    });
+  </script>
+
+</polymer-element>

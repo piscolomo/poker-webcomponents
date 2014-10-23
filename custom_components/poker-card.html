@@ -1,6 +1,6 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 
-<polymer-element name="poker-card" attributes="kind number">
+<polymer-element name="poker-card" attributes="kind number value">
 
   <template>
     <link rel="stylesheet" href="poker-card.css">
@@ -16,7 +16,12 @@
     	},
 
     	ready: function(){
+    		console.log("THIS KIND");
+    		console.log(this.kind);
+    		console.log("THIS NUMBER");
+    		console.log(this.number);
     		this.posy = this.typescollection.indexOf(this.kind);
+    		
     	}
     });
   </script>
